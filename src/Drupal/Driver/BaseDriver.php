@@ -129,6 +129,20 @@ abstract class BaseDriver implements DriverInterface {
   /**
    * {@inheritdoc}
    */
+  public function createEntity($entity_type, $entity) {
+    throw new UnsupportedDriverActionException($this->errorString('create entities'), $this);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function entityDelete($entity) {
+    throw new UnsupportedDriverActionException($this->errorString('delete entities'), $this);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function isField($entity_type, $field_name) {
     return FALSE;
   }

@@ -221,6 +221,21 @@ class DrushDriver extends BaseDriver {
   /**
    * {@inheritdoc}
    */
+  public function createEntity($entity_type, $entity) {
+    $result = $this->drush('behat', array('create-entity', escapeshellarg(json_encode(array($entity_type, $entity)))), array());
+    return json_decode($result);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function entityDelete($entity) {
+    $this->drush('behat', array('delete-entity', escapeshellarg(json_encode($entity))), array());
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function isField($entity_type, $field_name) {
     // If the Behat Drush Endpoint is not installed on the site-under-test,
     // then the drush() method will throw an exception. In this instance, we

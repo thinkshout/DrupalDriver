@@ -141,6 +141,27 @@ interface DriverInterface {
   public function roleDelete($rid);
 
   /**
+   * Creates an entity.
+   *
+   * @param string $entity_type
+   *   The type of entity to create.
+   * @param object $entity
+   *   The populated entity object.
+   *
+   * @return object
+   *   The entity object including the entity ID in the case of new entities.
+   */
+  public function createEntity($entity_type, $entity);
+
+  /**
+   * Deletes an entity.
+   *
+   * @param object $entity
+   *   The entity to delete.
+   */
+  public function entityDelete($entity);
+
+  /**
    * Check if the specified field is an actual Drupal field.
    *
    * @param string $entity_type
