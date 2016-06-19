@@ -143,6 +143,13 @@ abstract class BaseDriver implements DriverInterface {
   /**
    * {@inheritdoc}
    */
+  public function entityQuery($entity_type, $conditions) {
+    throw new UnsupportedDriverActionException($this->errorString('entity field query'), $this);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function isField($entity_type, $field_name) {
     return FALSE;
   }

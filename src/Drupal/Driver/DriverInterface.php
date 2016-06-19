@@ -162,6 +162,25 @@ interface DriverInterface {
   public function entityDelete($entity);
 
   /**
+   * Performs an entity query and returns results.
+   *
+   * @param string $entity_type
+   *   The type of entity to query.
+   * @param array $conditions
+   *   Array of conditions. Example:
+   *   [
+   *     [
+   *       'field' => 'status',
+   *       'value' => 1,
+   *       'operator' => '=',
+   *     ]
+   *   ]
+   * @return array
+   *   Array of matched entities.
+   */
+  public function entityQuery($entity_type, $conditions);
+
+  /**
    * Check if the specified field is an actual Drupal field.
    *
    * @param string $entity_type

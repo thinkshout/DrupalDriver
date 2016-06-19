@@ -294,6 +294,13 @@ class DrupalDriver implements DriverInterface, SubDriverFinderInterface {
   /**
    * {@inheritdoc}
    */
+  public function entityQuery($entity_type, $conditions) {
+    // TODO: Implement this.
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function isField($entity_type, $field_name) {
     return $this->getCore()->isField($entity_type, $field_name);
   }
