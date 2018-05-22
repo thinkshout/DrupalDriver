@@ -92,14 +92,14 @@ class DrupalDriver implements DriverInterface, SubDriverFinderInterface {
   /**
    * {@inheritdoc}
    */
-  public function userCreate($user) {
+  public function userCreate(\stdClass $user) {
     $this->getCore()->userCreate($user);
   }
 
   /**
    * {@inheritdoc}
    */
-  public function userDelete( $user) {
+  public function userDelete(\stdClass $user) {
     $this->getCore()->userDelete($user);
   }
 
@@ -275,20 +275,6 @@ class DrupalDriver implements DriverInterface, SubDriverFinderInterface {
    */
   public function roleDelete($rid) {
     $this->getCore()->roleDelete($rid);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function createEntity($entity_type, $entity) {
-    // TODO: Implement this.
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function entityDelete($entity) {
-    // TODO: Implement this.
   }
 
   /**
