@@ -276,21 +276,7 @@ class DrupalDriver implements DriverInterface, SubDriverFinderInterface {
   public function roleDelete($rid) {
     $this->getCore()->roleDelete($rid);
   }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function createEntity($entity_type, $entity) {
-    // TODO: Implement this.
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function entityDelete($entity) {
-    // TODO: Implement this.
-  }
-
+  
   /**
    * {@inheritdoc}
    */
