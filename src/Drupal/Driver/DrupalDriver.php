@@ -92,14 +92,14 @@ class DrupalDriver implements DriverInterface, SubDriverFinderInterface {
   /**
    * {@inheritdoc}
    */
-  public function userCreate(\stdClass $user) {
+  public function userCreate($user) {
     $this->getCore()->userCreate($user);
   }
 
   /**
    * {@inheritdoc}
    */
-  public function userDelete(\stdClass $user) {
+  public function userDelete( $user) {
     $this->getCore()->userDelete($user);
   }
 
